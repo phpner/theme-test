@@ -1,4 +1,9 @@
-<?php 
+<?php
+/**
+ * @package phpner
+ * @subpackage free template
+ * @since 1.0
+ **/
 
 class settingsTemplame
 {
@@ -36,7 +41,7 @@ class settingsTemplame
 		if (count(self::$sidebar) === 1)
 			{
 					register_sidebar(self::$sidebar[0]);
-				 
+					return;
 			}
 
 		for ($i=0; $i < count(self::$sidebar) ; $i++) 
@@ -57,6 +62,7 @@ class settingsTemplame
      */
     public static function imagesSupport()
     {
+        add_theme_support( 'custom-logo' ).
         add_theme_support( 'post-thumbnails' );
 
         add_image_size( 'phpner-featured-image', 2000, 1200, true );

@@ -10,6 +10,8 @@
 <body <?php body_class(); ?>>
   <header>
     <?php
+             the_custom_header_markup();
+    the_custom_logo();
       $args = array('theme_location' => 'top', 'container'=> 'nav', 'menu_class' => 'bottom-menu', 'menu_id' => 'bottom-nav');
       wp_nav_menu($args);
     ?>
