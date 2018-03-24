@@ -38,7 +38,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            publicPath: '/public/img/',
+                            publicPath: '/img/',
                             outputPath: 'img/'
                         }
                     }
@@ -48,12 +48,12 @@ module.exports = {
     },
     plugins: [
         new WebpackNotifierPlugin(),
-        new ExtractTextPlugin("/assets/css/styles.css"),
+        new ExtractTextPlugin("css/style.css"),
         new BrowserSyncPlugin({
             host: 'wor.ru',
             port: 3000,
             proxy: 'wor.ru',
-            files: ["*.php", "wp-content/themes/mytemplate/assets/**/*.css","/assets/js/*.js"]
+            files: ["*.php", "assets/**/*.css","assets/js/*.js","src/*.js"]
         })
     ]
 };

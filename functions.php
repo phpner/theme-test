@@ -5,6 +5,7 @@
  * @since 1.0
  **/
 
+
 require_once get_parent_theme_file_path( '/inc/settins-template.php' );
 
 
