@@ -8,6 +8,15 @@
 
 function phpner_customizer($wp_customize)
 {
+    $wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
+    $wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
+    $wp_customize->selective_refresh->add_partial( 'blogname', array(
+        'selector' => '.site-title a',
+    ) );
+    $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+        'selector' => '.site-description'
+    ) );
     /*logo setting*/
     $wp_customize->add_section( 'title_tagline', array(
         'title' => __( 'Логотип' ),

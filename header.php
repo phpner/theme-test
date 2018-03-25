@@ -11,7 +11,7 @@
 <div class="container-fluid">
         <header class="header-wrap row">
             <?php  the_custom_header_markup(); ?>
-            <div class="col-xs-2" style="<?php echo get_option('logo_position','foat:left'); ?>">
+            <div class="col-xs-4 col-md-2 col-sm-4" style="<?php echo get_option('logo_position','foat:left'); ?>">
                 <?php  the_custom_logo();?>
             </div>
 
@@ -32,11 +32,14 @@
                     </div><!-- header-text -->
           </header>
     <div class="row">
-        <div class="col-lg-12">
             <?php
-            $args = array('theme_location' => 'top', 'container'=> 'nav', 'menu_class' => 'bottom-menu', 'menu_id' => 'bottom-nav');
+            $args = array('theme_location' => 'top', 'container'=> 'nav',"container_class"=>"collapse navbar-collapse menu-header ", 'menu_class' => 'header-menu  navbar-nav', 'menu_id' => 'header-menu-nav');
             wp_nav_menu($args);
             ?>
-        </div>
     </div>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".menu-header ">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
 </div>
