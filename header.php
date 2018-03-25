@@ -9,13 +9,12 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="container-fluid">
-    <div class="row">
-        <header class="header-wrap">
+        <header class="header-wrap row">
             <?php  the_custom_header_markup(); ?>
-            <div class="header-logo-desc-wrap">
-                    <div class="logo">
-                        <?php  the_custom_logo();?>
-                    </div>
+            <div class="col-xs-2" style="<?php echo get_option('logo_position','foat:left'); ?>">
+                <?php  the_custom_logo();?>
+            </div>
+
                     <div class="header-text">
                         <?php if ( is_front_page() ) : ?>
                             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -30,13 +29,14 @@
                             ?>
                             <p class="site-description"><?php echo $description; ?></p>
                         <?php endif; ?>
-                    </div><!-- .site-branding-text -->
-            </div><!-- .site-branding -->
-
-             <?php
-              $args = array('theme_location' => 'top', 'container'=> 'nav', 'menu_class' => 'bottom-menu', 'menu_id' => 'bottom-nav');
-              wp_nav_menu($args);
-            ?>
+                    </div><!-- header-text -->
           </header>
+    <div class="row">
+        <div class="col-lg-12">
+            <?php
+            $args = array('theme_location' => 'top', 'container'=> 'nav', 'menu_class' => 'bottom-menu', 'menu_id' => 'bottom-nav');
+            wp_nav_menu($args);
+            ?>
+        </div>
     </div>
 </div>

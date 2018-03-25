@@ -1,6 +1,37 @@
 * {
   margin: 0 !important;
   padding: 0 !important; }
+
+.header-wrap {
+  height: 100vh;
+  min-height: 100%;
+  position: relative; }
+  .header-wrap .wp-custom-header img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1; }
+  .header-wrap .custom-logo {
+    position: relative;
+    width: 100%;
+    height: auto; }
+  .header-wrap .header-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto !important;
+    height: 10%;
+    text-align: center; }
+    .header-wrap .header-text .site-title {
+      width: 100%;
+      font-size: 65px; }
+      .header-wrap .header-text .site-title a {
+        color: #fff; }
+    .header-wrap .header-text .site-description {
+      width: 100%;
+      color: 000; }
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.

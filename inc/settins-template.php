@@ -62,7 +62,7 @@ class settingsTemplame
      */
     public static function imagesSupport()
     {
-        add_theme_support( 'custom-logo' ).
+       /* add_theme_support( 'custom-logo' );*/
         add_theme_support( 'post-thumbnails' );
 
         add_image_size( 'phpner-featured-image', 2000, 1200, true );

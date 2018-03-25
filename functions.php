@@ -5,7 +5,11 @@
  * @since 1.0
  **/
 
-
+/*Удаляем тупой отступ с верху !!! wp рулит !*/
+add_action('get_header', 'remove_admin_login_header');
+function remove_admin_login_header() {
+    remove_action('wp_head', '_admin_bar_bump_cb');
+}
 require_once get_parent_theme_file_path( '/inc/settins-template.php' );
 
 

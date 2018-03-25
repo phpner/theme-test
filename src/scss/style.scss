@@ -2,3 +2,39 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+.header-wrap{
+  height: 100vh;
+  min-height: 100%;
+  position: relative;
+  .wp-custom-header img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  .custom-logo{
+    position: relative;
+    width: 100%;
+    height: auto;
+
+  }
+  .header-text{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin:  auto !important;
+    height: 10%;
+    text-align: center;
+    .site-title{
+      width: 100%;
+      font-size: 65px;
+      a{color: #fff;}
+    }
+    .site-description{
+      width: 100%;
+      color: 000;
+    }
+  }
+}

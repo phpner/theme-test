@@ -8,6 +8,37 @@
 
 function phpner_customizer($wp_customize)
 {
+    /*logo setting*/
+    $wp_customize->add_section( 'title_tagline', array(
+        'title' => __( 'Логотип' ),
+        'description' => __( 'Настройка логотипа' ),
+        'panel' => '', // Not typically needed.
+        'priority' => 20,
+        'capability' => 'edit_theme_options',
+    ) );
+
+    $wp_customize->add_setting( 'logo_position_setting', array(
+        'default'           => 'left',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'makeCss',
+        'priority' => 200,
+    ) );
+
+    $wp_customize->add_control( 'logo_position_setting', array(
+        'type'    => 'radio',
+        'label'    =>  'Позиция логотипа',
+        'choices'  => array(
+            'left'  => 'В лево',
+            'center' =>  'Центр',
+            'right'   => 'В права',
+        ),
+        'section'  => 'title_tagline',
+        'priority' => 8,
+    ) );
+
+
+    /*add img*/
+
     $wp_customize->add_section('add_img',[
         'title' => 'Добавить фото'
     ]);
@@ -26,3 +57,20 @@ function phpner_customizer($wp_customize)
 }
 
 add_action( 'customize_register', 'phpner_customizer' );
+
+function makeCss($input)
+{
+    if ($input == "left")
+    {
+        update_option('logo_position',"float:left;position:relative; top:50px;left:50px;");
+        return 'left';
+    }elseif($input == "right")
+    {
+        update_option('logo_position',"float:right;position:relative; top:50px;right:50px;");
+        return "right";
+    }else{
+        update_option('logo_position',"float:none; position:absolute;left:0;right:0;margin:auto !important;height: 50%;bottom: 0;top: 0;");
+        return "center";
+    }
+
+}
