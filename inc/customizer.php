@@ -100,46 +100,11 @@ function phpner_customizer($wp_customize)
         ) ) );
 
 
-    /**
-     * add img
-     */
-
-    $wp_customize->add_section('add_img',[
-        'title' => 'Добавить фото'
-    ]);
-    $wp_customize->add_setting('template_img_sider',[array('default' => 'item_1')]);
-/*
-    $wp_customize->add_control('template_img_sider',[
-        'type' => 'radio',
-        'label' => 'Вот так',
-        'section' => 'add_img',
-        'choices' => [
-            'item_1' => 'item_1',
-            'item_2' => 'item_2',
-            'item_3' => 'item_3',
-        ]
-    ]);*/
-
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'logo',
-            array(
-                'label'      => __( 'Upload a logo', 'theme_name' ),
-                'section'    => 'add_img',
-                'settings'   => 'template_img_sider',
-                'context'    => 'your_setting_context',
-                'allow_addition' => true,
-            )
-        )
-    );
-
-
     /*remove*/
     $wp_customize->remove_section('colors');
 }
 
-/*add_action( 'customize_register', 'phpner_customizer',10 );*/
+add_action( 'customize_register', 'phpner_customizer',10 );
 
 function makeCss($input)
 {
@@ -157,54 +122,4 @@ function makeCss($input)
     }
 
 }
-add_filter( 'jt_default_backgrounds', 'jt_default_backgrounds' );
 
-function jt_default_backgrounds( $backgrounds ) {
-
-    $backgrounds['example-1'] = array(
-        'url'           => '%s/images/backgrounds/example-1.png',
-        'thumbnail_url' => '%s/images/backgrounds/example-1-thumb.png',
-    );
-
-    $backgrounds['example-2'] = array(
-        'url'           => '%s/images/backgrounds/example-2.png',
-        'thumbnail_url' => '%s/images/backgrounds/example-2-thumb.png',
-    );
-
-    $backgrounds['example-3'] = array(
-        'url'           => '%s/images/backgrounds/example-3.png',
-        'thumbnail_url' => '%s/images/backgrounds/example-3-thumb.png',
-    );
-
-    return $backgrounds;
-}
-require_once  'slider/Phpner_Customize_Slider.php';
-function jt_customize_register( $wp_customize )
-{
-
-    /* Remove the WordPress background image control. */
-    /*$wp_customize->remove_control( 'background_image' );*/
-
-    /* Load our custom background image control. */
-    require_once(trailingslashit(get_template_directory()) . 'inc/class_phpner_Customize_Control_Background_Image.php');
-
-    $wp_customize->add_section('img_select_section')->title = "klkl";
-    $wp_customize->get_section('img_select_section')->priority = 2;
-
-    $wp_customize->add_setting('img_select', array(
-        'default' => '#',
-        'transport' => 'refresh',
-        'priority' => 2,
-    ));
-
-
-    /* Add our custom background image control. */
-    $wp_customize->add_control(new MultiImageControl($wp_customize, 'img_select', array(
-        'label' => __('Background '),
-        'section' => 'img_select_section',
-    )));
-
-
-}
-
-add_action( 'customize_register', 'jt_customize_register');

@@ -33,8 +33,10 @@
                 var attachments = [];
                 selection.map( function( attachment ) {
                     attachment = attachment.toJSON();
-                    $(".images").append( "<li class='image-list'><img src='"+attachment.url+"'></li>" );
+                    $(".images").append( "<li class='image-list'><img src='"+attachment.url+"'><span class='delleteImg'></span></li>" );
                     attachments.push(attachment.url);
+
+                    console.log(attachments);
                     //
                 });
                 var attachment_string = attachments.join() + "," + $('#images-input').val();
@@ -43,7 +45,7 @@
             custom_uploader.open();
         });
 
-        $(".images").click(function(){
+        $(".image-list:before").click(function(){
             var img_src = $(event.target).find("img").attr('src');
             $(event.target).closest("li").remove();
             var attachment_string = $('#images-input').val();

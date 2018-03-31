@@ -73,7 +73,7 @@ class settingsTemplame
     /**
      *Settings template
      */
-    function phpner_setup(){
+    public  static function phpner_setup(){
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );

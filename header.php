@@ -54,7 +54,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <?php var_dump(get_theme_mod('img_select'));?>
+    <?php var_dump(get_theme_mod('phpner_customize_slider'));?>
     <img src="<?php echo get_theme_mod('img_select');?>" alt="">
 
 </div>

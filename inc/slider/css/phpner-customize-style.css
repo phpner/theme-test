@@ -1,0 +1,34 @@
+.image-list{
+    width: 100%;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: inset 0 0 15px rgba(0,0,0,.1), inset 0 0 0 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 0 15px rgba(0,0,0,.1), inset 0 0 0 1px rgba(0,0,0,.05);
+    background: #eee;
+    vertical-align: middle;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+    position: relative;
+}
+.delleteImg{
+    content: '\2718';
+    position: absolute;
+    display: block;
+    top: 12px;
+    left: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 37px;
+    color: #bf0000;
+    font-weight: bold;
+    transition: all 1s;
+
+}
+.delleteImg{
+    color: #ff0000;
+    transform:  rotate(180deg);
+}

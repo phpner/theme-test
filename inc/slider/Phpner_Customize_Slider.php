@@ -17,11 +17,10 @@ class Phpner_Customize_Slider extends WP_Customize_Image_Control
 
     }
 
-    public function render_content(){
+    public function render_content()
+    {
         ?>
-        <label>
-            <span class='customize-control-title'>Image</span>
-        </label>
+
         <div>
             <ul class='images'></ul>
         </div>
@@ -39,8 +38,13 @@ class Phpner_Customize_Slider extends WP_Customize_Image_Control
         parent::enqueue();
 
         wp_enqueue_script('me_custom',get_template_directory_uri().'/inc/slider/js/phpner-customize-script.js',array('jquery','wp-api'));
-        wp_enqueue_style('me_custom',get_template_directory_uri().'/assets/css/my_custom.css');
+        wp_enqueue_style('me_custom',get_template_directory_uri().'/inc/slider/css/phpner-customize-style.css');
 
+        wp_localize_script( 'customize-controls', '_wpCustomizeBackground', array(
+            'defaults' => '',
+            'nonces' =>  wp_create_nonce( 'background-add' )
+
+        ) );
 
     }
 

@@ -39,11 +39,11 @@ settingsTemplame::disableRestApi();
  * Customizer additions.
  */
 
-require get_parent_theme_file_path( '/inc/slider/phpner_start.php');
-add_action( 'customize_register', [ 'class_phpner_start' , 'phpner_slider_register']);
 
-require get_parent_theme_file_path( '/inc/customizer.php' );
-require get_parent_theme_file_path( '/inc/custom-header.php');
 require get_parent_theme_file_path( '/inc/add_scripts.php');
+require get_parent_theme_file_path( '/inc/custom-header.php');
+require get_parent_theme_file_path( '/inc/customizer.php' );
+
+require get_parent_theme_file_path( '/inc/slider/phpner_start.php');
 
 ?>

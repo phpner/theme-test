@@ -41,7 +41,7 @@ class MultiImageControl extends WP_Customize_Image_Control
         $custom_background = get_theme_support( 'custom-background' );
 
         wp_enqueue_script('me_custom',get_template_directory_uri().'/assets/js/my_custom.js',array('jquery','wp-api'));
-        wp_enqueue_style('me_custom',get_template_directory_uri().'/assets/css/my_custom.css');
+        
 
 
 
