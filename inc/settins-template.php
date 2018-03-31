@@ -78,6 +78,10 @@ class settingsTemplame
         // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );
 
+        /*add support background image*/
+
+        add_theme_support( 'custom-background' );
+
         /*
          * Let WordPress manage the document title.
          * By adding theme support, we declare that this theme does not use a
@@ -163,7 +167,7 @@ class settingsTemplame
      */
     public static function disableRestApi()
     {
-        add_filter('rest_enabled', '__return_false');
+       add_filter('rest_enabled', '__return_false');
         remove_action( 'xmlrpc_rsd_apis',            'rest_output_rsd' );
         remove_action( 'wp_head',                    'rest_output_link_wp_head', 10, 0 );
         remove_action( 'template_redirect',          'rest_output_link_header', 11, 0 );

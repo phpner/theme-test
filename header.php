@@ -33,13 +33,28 @@
           </header>
     <div class="row">
             <?php
-            $args = array('theme_location' => 'top', 'container'=> 'nav',"container_class"=>"collapse navbar-collapse menu-header ", 'menu_class' => 'header-menu  navbar-nav', 'menu_id' => 'header-menu-nav');
+            $d = "ddeed";
+            $args = array(
+                'theme_location' => 'top',
+                'container'=>
+                'nav',"container_class"=>"s ",
+                'menu_class' => 'header-menu  navbar-nav',
+                'menu_id' => 'header-menu-nav'
+                );
+            ?>
+        <div class="collapse navbar-collapse menu-header " style="background:<?php echo get_theme_mod('color_menu','#fff')?>">
+            <?php
             wp_nav_menu($args);
             ?>
+        </div>
+        <pre>
     </div>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".menu-header ">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
+    <?php var_dump(get_theme_mod('img_select'));?>
+    <img src="<?php echo get_theme_mod('img_select');?>" alt="">
+
 </div>
