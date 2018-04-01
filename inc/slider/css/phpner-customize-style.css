@@ -14,21 +14,32 @@
     overflow: hidden;
     position: relative;
 }
-.delleteImg{
+.image-list:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    transition: all .4s ease-in;
+
+}
+.image-list:hover:before{
+    color: #ff0000;
+    top: 0px;
+    background: rgba(0,0,0,.6);
+}
+.image-list:after{
     content: '\2718';
     position: absolute;
     display: block;
-    top: 12px;
-    left: 16px;
-    border-radius: 50%;
+    margin: auto;
+    font-size: 100px;
+    color: #bb1717;
+    opacity: 0;
+    transition: all .4s ease-in;
     cursor: pointer;
-    font-size: 37px;
-    color: #bf0000;
-    font-weight: bold;
-    transition: all 1s;
-
 }
-.delleteImg{
-    color: #ff0000;
-    transform:  rotate(180deg);
+.image-list:hover:after{
+    opacity: 1;
 }

@@ -45,7 +45,7 @@
             custom_uploader.open();
         });
 
-        $(".image-list:before").click(function(){
+        $(document).on('click','.image-list',function(){
             var img_src = $(event.target).find("img").attr('src');
             $(event.target).closest("li").remove();
             var attachment_string = $('#images-input').val();
